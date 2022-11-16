@@ -24,9 +24,9 @@ select {
           <option value="40.689167, -74.044444">Estatua de la Libertad</option>
           <option value="51.507,0.1275">Londres</option>
         </select>
-        <form>
-			<input type="text" name="lon" id="lon" placeholder="longitud">
-			<input type="text" name="lat" id="lat" placeholder="latitud">
+        <form method="post">
+			<input type="number" name="lon" id="lon" placeholder="longitud">
+			<input type="number" name="lat" id="lat" placeholder="latitud">
 			<button type="button" method="post" onclick="latLon()">Localizar</button>
 		</form>
       </div>
@@ -56,12 +56,12 @@ select {
             map.flyTo(coords, 18);
           });
         
-        function latLon(){
-			var latitud=document.getElementById("lat");
+          function latLon(){
+			var latitud=document.getElementById("lat").value;
 			console.log(latitud);
-			var longitud=document.getElementById("lon");
+			var longitud=document.getElementById("lon").value;
 			console.log(longitud);
-                        mimarker.setLatLng([latitud, longitud], {draggable:'true'});
+            mimarker.setLatLng([latitud, longitud], {draggable:'true'});
 		  }
 
 
